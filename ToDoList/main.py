@@ -8,6 +8,7 @@ while True:
     try:
         if j == 1:
             m.check_todo()
+            m.get_info()
         elif j == 2:
             m.write_todo()
         elif j == 3:
