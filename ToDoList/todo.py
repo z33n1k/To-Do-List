@@ -116,21 +116,24 @@ def organize_outputs_by_date(outputs):
         time_diff = abs(date - current_date)
         parsed_outputs.append((output, time_diff))
 
-    # Sort the outputs based on time differences
-    sorted_outputs = sorted(parsed_outputs, key=lambda x: x[1])
+    # Sort the outputs based on time differences in descending order
+    sorted_outputs = sorted(parsed_outputs, key=lambda x: x[1], reverse=True)
 
     # Return the organized outputs
     return [output for output, _ in sorted_outputs]
+
 def get_more_info1():
     temp_input = int(input("1 to reset all to do's\n2 to delete a single to do\ninput: "))
     if temp_input == 1:
         resettext()
+        print("All \"to do's\" reseted")
     elif temp_input == 2:
         delete_one()
+        print("\"To do\" deleted")
     else:
         print("Incorrect input")
         get_more_info1()
-def delete_one():
+def get_info():
     n = int(input("Choose the \"to do\" you want to know more about: "))
     for i in range(1, 99):
         #sorry for nesting, still really a beginner
